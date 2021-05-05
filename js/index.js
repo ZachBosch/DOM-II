@@ -8,12 +8,23 @@ const intro = document.querySelector('.intro');
 const boat = document.querySelector('.img-fluid');
 const map = document.querySelector('.img-content img');
 const footer = document.querySelector('.footer')
+const button = document.querySelector('.btn');
 
 
-
+//windowEvent
 window.addEventListener('load', (event) => {
     alert("KINDLY GO BACK TO WHERE YOU CAME FROM");
 });
+window.addEventListener('copy', (event) => {
+    alert("PLEASE DON'T COPY OUR STUFF BRO!")
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'g') {
+        button.style.color = "red"
+    }
+});
+
 //headerEvents
 function changeColor(event) {
     header.style.backgroundColor = ('hotpink');
@@ -44,6 +55,16 @@ function loseMapBorder(event) {
     map.style.border = '';
 }
 window.addEventListener('scroll', loseMapBorder);
+
+//footerEvent
+footer.addEventListener('mouseenter', (event) => {
+    footer.style.backgroundColor = 'blue'
+    footer.style.transition = '1s'
+});
+footer.addEventListener('transitionend', (event) => {
+    footer.style.backgroundColor = '';
+    footer.style.transition = '1s';
+});
 
 
 
